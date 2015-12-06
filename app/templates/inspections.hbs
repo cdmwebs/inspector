@@ -24,6 +24,7 @@
           <th>Revision</th>
           <th>Title</th>
           <th>Complete?</th>
+          <th></th>
         </tr>
       </thead>
 
@@ -38,6 +39,9 @@
               {{else}}
                 {{emoji-icon 'thumbsdown'}}
               {{/if}}
+            </td>
+            <td {{action "deleteInspection" inspection on="click"}}>
+              {{emoji-icon 'x'}}
             </td>
           </tr>
         {{/each}}

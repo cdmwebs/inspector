@@ -11,6 +11,11 @@ export default Ember.Controller.extend({
 
       this.set('title', '');
       this.set('isCompleted', false);
+    },
+
+    deleteInspection(inspection) {
+      inspection.deleteRecord();
+      inspection.save();
     }
   }
 });
