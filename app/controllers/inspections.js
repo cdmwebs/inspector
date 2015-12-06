@@ -8,7 +8,9 @@ export default Ember.Controller.extend({
         isCompleted: this.get('isCompleted')
       });
       inspection.save();
-      return true;
+
+      this.set('title', '');
+      this.set('isCompleted', false);
     }
   }
 });
