@@ -1,0 +1,36 @@
+<h2>New Inspection</h2>
+<form class="form" {{action "createInspection" on="submit"}}>
+  <p>
+    <label>Title</label>
+    {{input value=title}}
+  </p>
+  <p>
+    <label>
+      {{input type="checkbox" name="isCompleted" checked=isCompleted}}
+      Complete?
+    </label>
+  </p>
+  <input type="submit" value="Add Inspection">
+</form>
+
+<h2>Completed Inspections</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Revision</th>
+      <th>Title</th>
+      <th>Complete?</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {{#each model as |inspection|}}
+      <tr>
+        <td>{{inspection.rev}}</td>
+        <td>{{inspection.title}}</td>
+        <td>{{inspection.isCompleted}}</td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
+
