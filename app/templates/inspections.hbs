@@ -32,7 +32,13 @@
           <tr>
             <td>{{inspection.rev}}</td>
             <td>{{inspection.title}}</td>
-            <td>{{inspection.isCompleted}}</td>
+            <td>
+              {{#if inspection.isCompleted}}
+                {{emoji-icon 'smiley'}}
+              {{else}}
+                {{emoji-icon 'thumbsdown'}}
+              {{/if}}
+            </td>
           </tr>
         {{/each}}
       </tbody>
